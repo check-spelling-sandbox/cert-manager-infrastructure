@@ -22,7 +22,7 @@ resource "google_project_iam_binding" "cert-manager-release_managers" {
     local.cert_manager_release_managers,
     # We must explicitly grant the managed GCP service account IAM permission
     # to launch jobs in the project because the 'iam_binding' type of Terraform
-    # resource is authorative for the role type.
+    # resource is authoritative for the role type.
     [
       local.cert_manager_release_gcb_service_account,
       google_service_account.scheduler_gcb_invoker.member,
